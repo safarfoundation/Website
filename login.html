@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form" class="form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Active Member's ID:" required>
+            <div class="password-container">
+                <input class="input-password" type="password" id="login-password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <button class="button-login" role="button" onclick="login()">Login</button>
+            <p>Don't have an account? <a  class="p" href="#" onclick="showRegister()">Register here</a></p>
+        </div>
+
+        <div id="register-form" class="form hidden">
+            <h2>Register</h2>
+            <input type="text" id="register-name" placeholder="Full Name" required>
+            <input type="tel" id="register-number" placeholder="Phone Number" required>
+            <button id="send-otp-button" class="send-otp-button" role="button" onclick="sendOTP()">Send OTP</button>
+            <p id="otp-message" class="hidden"><span>Please wait for the OTP...</span></p>
+            <div id="otp-section" class="hidden">
+                <input class="send-otp-button" type="text" id="register-otp" placeholder="Enter OTP" required>
+                <button class="send-otp-button" role="button" onclick="verifyOTP()">Verify OTP</button>
+                <p id="verifying-message" class="hidden">Verifying...🔍</p>
+            </div>
+            <input type="text" id="register-username" placeholder="Active Member's ID" required disabled>
+            <div class="password-container">
+                <input class="input-password" type="password" id="register-password" placeholder="Set Your Password" required disabled>
+                <span class="toggle-password" onclick="toggleRegisterPassword()">👁️</span>
+            </div>
+            <div class="password-container">
+                <input class="input-password" type="password" id="register-confirm-password" placeholder="Confirm Password" required disabled>
+                <span class="toggle-password" onclick="toggleRegisterConfirmPassword()">👁️</span>
+            </div>
+            <button class="button-login" role="button" onclick="register()" id="register-button" disabled>Register</button>
+            <p>Already have an account? <a  class="p" href="#" onclick="showLogin()">Login here</a></p> 
+        </div>
+    </div>
+
+<div id="Pop-up-Images">
+    <!-- Error Pop-up incorrect password -->
+    <div id="error-popup" class="hidden">
+        <img src="PleaseEnterYourPassword.png" alt="Error Notification" class="error-img">
+    </div>
+    <!-- Error Pop-up invalid phone number -->
+    <div id="phone-error-popup" class="hidden">
+        <img src="InvalidNumber.png" alt="Enter Phone Number" class="error-img">
+    </div>
+    <!-- Error Pop-up Fill all fields -->
+    <div id="blank-field-popup" class="hidden">
+        <img src="FillAllFields.png" alt="Field is Blank" class="error-img">
+    </div>
+    <!-- Error Pop-up Successfully sent OTP -->
+    <div id="otp-confirmation-popup" class="hidden">
+        <img src="SuccessfullySentOTP.png" alt="OTP Confirmation" class="error-img">
+    </div>
+    <!-- OTP Verified Pop-up -->
+    <div id="otp-verified-popup" class="hidden">
+        <img src="OTPverified.png" alt="OTP Verified" class="error-img">
+    </div>
+    <!-- Password Strength Pop-up -->
+    <div id="password-strength-popup" class="hidden">
+        <img src="PleasesetastrongPassword.png" alt="Password Strength" class="error-img">
+    </div>
+    <!-- Invalid OTP Pop-up -->
+    <div id="invalid-otp-popup" class="hidden">
+        <img src="InvalidOTP.png" alt="Invalid OTP" class="error-img">
+    </div>
+    <!-- Password Mismatch Pop-up -->
+    <div id="password-mismatch-popup" class="hidden">
+        <img src="PasswordNotMatch.png" alt="Passwords Do Not Match" class="error-img">
+    </div>
+    <!-- Username already exists Pop-up -->
+    <div id="username-exists-popup" class="hidden">
+        <img src="UsernameAlreadyExists.png" alt="Username Exists" class="error-img">
+    </div>
+    <!-- Registration Successful Pop-up -->
+    <div id="registration-success-popup" class="hidden">
+        <img src="RegistrationSuccessful.png" alt="Registration Successful" class="error-img">
+    </div>
+</div>
+    <script src="login.js"></script>
+</body>
+</html>
