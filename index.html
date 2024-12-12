@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Spin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="profile-bar">
+        <div class="Logo">
+            <img src="LogoSF.png" alt="Logo" class="nav-logo"> <!--- Added Logo here-->
+        </div>
+        <a href="index.html">Home</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <img src="NavbarIcon.png" alt="Menu Icon" class="menu-icon" onclick="toggleDropdown()">
+        
+        <div class="dropdown-menu hidden" id="dropdown-menu">
+            <img src="AddIMG.png" alt="Profile Photo" id="profile-photo"> 
+            <button class="button-profile" role="button" id="edit-profile-button" onclick="showEditProfile()">Edit Profile</button>
+            <button class="button-winning-history" role="button" id="winning-history-button" onclick="showWinningHistory()">Winning History</button>
+            <br>
+            <div class="profile-details">
+                <p id="profile-name">Name: </p>
+                <hr><br>
+                <p id="profile-number">Phone Number: </p>
+                <hr><br>
+                <p id="profile-id">Active Member's ID: </p>
+                <hr><br>
+                <p id="profile-email">Email: </p>
+                <hr><br>
+            </div>
+            
+            <button class="button-wallet" role="button" id="wallet-button" onclick="toggleWallet()"><span class="text">Wallet</span><span>Click to check Balance</span></button>
+            <div class="wallet-dropdown hidden" id="wallet-dropdown">
+                <p>👇💰<u>Current-Balance</u>💰👇
+                    <br>
+                    <span class="total-balance" id="current-balance">0</span></p>
+                    <br>
+                <button class="button-Add-Money" role="button" onclick="showAddMoney()"><span class="text">Add Money</span><span>Click to Add Money</span></button>
+            </div>
+            <button class="button-logout" role="button" onclick="logout()">LogOut</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="mainbox" id="mainbox">
+            <div class="box" id="box">
+                <div class="box1">
+                    <span class="font span1"><h5>T-Shirt</h5></span>
+                    <span class="font span2"><h5>Cash</h5></span>
+                    <span class="font span3"><h5>Box</h5></span>
+                    <span class="font span4"><h5>Long Khata</h5></span>
+                    <span class="font span5"><h5>Bad Luck</h5></span>
+                </div>
+                <div class="box2">
+                    <span class="font span1"><h5>Books</h5></span>
+                    <span class="font span2"><h5>Game Points</h5></span>
+                    <span class="font span3"><h5>Badge</h5></span>
+                    <span class="font span4"><h5>Dinner Table</h5></span>
+                    <span class="font span5"><h5>Evening Snacks</h5></span>
+                </div>
+            </div>
+            <button class="spin" id="spin-button" onclick="spin()">SPIN</div>
+                <div id="spin-timer" class="hidden">10</div>
+
+        <div id="edit-profile-form" class="edit-profile hidden">
+            <h2>Edit Profile</h2>
+            <input type="file" id="edit-profile-photo" accept="image/*">
+            <button class="button-12" role="button" onclick="removeProfileImage()">Remove Image</button>
+            <input type="text" id="edit-profile-name" placeholder="Name">
+            <input type="tel" id="edit-profile-number" placeholder="Phone Number">
+            <input type="email" id="edit-profile-email" placeholder="Email">
+            <button class="save-button" role="button" onclick="saveProfile()">Save</button>
+            <button class="button-30" role="button" onclick="cancelEdit()">Cancel</button>
+        </div>
+        <div class="winning-history hidden">
+            <h2>Winning History</h2>
+            <div id="winning-history-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Won</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- Entries will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="button-30" role="button" onclick="closeWinningHistory()">Close</button> 
+        </div>
+        <audio id="applause" src="subhanallahAlhamdulillah(MP3_160K).mp3" type="audio/mp3"></audio>
+        <audio id="wheel" src="audio-editor-output.mp3" type="audio/mp3"></audio>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
